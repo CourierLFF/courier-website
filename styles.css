@@ -78,7 +78,11 @@ html,body {
 .background .star:nth-child(40) { left: 85%;  top: 95%;  animation-duration: 28s; animation-delay: -17s; --o:0.8; }
 
 .main {
+    height: 100%;
     z-index: 2;
     color: white;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
