@@ -1,3 +1,205 @@
+@font-face {
+    font-family: "Absolute";
+    src: url("assets/fonts/Absolute.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ark";
+    src: url("assets/fonts/Ark.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Awesome";
+    src: url("assets/fonts/Awesome.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Bacteria";
+    src: url("assets/fonts/Bacteria.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Buzzer";
+    src: url("assets/fonts/Buzzer.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Compass";
+    src: url("assets/fonts/Compass.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Corset";
+    src: url("assets/fonts/Corset.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Curse";
+    src: url("assets/fonts/Curse.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Desert";
+    src: url("assets/fonts/Desert.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Dust";
+    src: url("assets/fonts/Dust.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Fear";
+    src: url("assets/fonts/Fear.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Futile";
+    src: url("assets/fonts/Futile.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Holotype";
+    src: url("assets/fonts/Holotype.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Hungry";
+    src: url("assets/fonts/Hungry.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ignore";
+    src: url("assets/fonts/Ignore.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Kobold";
+    src: url("assets/fonts/Kobold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lookout";
+    src: url("assets/fonts/Lookout.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Loser";
+    src: url("assets/fonts/Loser.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Manticore";
+    src: url("assets/fonts/Manticore.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Mask";
+    src: url("assets/fonts/Mask.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Match";
+    src: url("assets/fonts/Match.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Memo";
+    src: url("assets/fonts/Memo.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "More";
+    src: url("assets/fonts/More.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Nope";
+    src: url("assets/fonts/Nope.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Outflank";
+    src: url("assets/fonts/Outflank.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Passage";
+    src: url("assets/fonts/Passage.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Quit";
+    src: url("assets/fonts/Quit.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Rude";
+    src: url("assets/fonts/Rude.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Saga";
+    src: url("assets/fonts/Saga.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Salty";
+    src: url("assets/fonts/Salty.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Sins";
+    src: url("assets/fonts/Sins.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Tape";
+    src: url("assets/fonts/Tape.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Teatime";
+    src: url("assets/fonts/Teatime.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Troll";
+    src: url("assets/fonts/Troll.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Urban";
+    src: url("assets/fonts/Urban.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Vest";
+    src: url("assets/fonts/Vest.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Winds";
+    src: url("assets/fonts/Winds.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Xerxes";
+    src: url("assets/fonts/Xerxes.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Yesterday";
+    src: url("assets/fonts/Yesterday.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Ziplock";
+    src: url("assets/fonts/Ziplock.ttf") format("truetype");
+}
+
+
+
 html,body {
     height: 100%;
     margin: 0;
@@ -85,4 +287,8 @@ html,body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.main > h1 {
+    font-size: 72px;
 }
