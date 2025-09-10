@@ -41,7 +41,10 @@ const fonts = [
     "Ziplock"
 ];
 
+const NUMBER_OF_STARS = 40;
+
 const mainText = document.querySelector('#main-text');
+const backgroundElement = document.querySelector('.background');
 
 async function changeFont() {
     let fontIndex = Math.floor(Math.random() * fonts.length);
@@ -56,3 +59,25 @@ async function changeFont() {
 }
 
 setInterval(changeFont, 500);
+
+function renderStars() {
+    for (let i = 0; i < NUMBER_OF_STARS; i++) {
+        const newStar = document.createElement("span");
+        newStar.classList.add("star");
+
+        let randomLeft = Math.floor(Math.random() * 99) + 1;
+        newStar.style.left = `${randomLeft}%`;
+
+        newStar.style.top = "100%";
+
+        let randomDuration = Math.floor(Math.random() * (30 - 10 + 1)) + 15;
+        newStar.style.animationDuration = `${randomDuration}s`;
+
+        let randomDelay = Math.floor(Math.random() * 20) + 1;
+        newStar.style.animationDelay = `${randomDelay}s`;
+
+        backgroundElement.appendChild(newStar);
+    }
+}
+
+renderStars();
