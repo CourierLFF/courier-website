@@ -44,19 +44,23 @@ const mainText = document.querySelector('#main-text');
 const backgroundElement = document.querySelector('.background');
 const headerText = document.querySelector('#header-text');
 
-async function changeFont() {
+async function changeFont(textElement) {
     let fontIndex = Math.floor(Math.random() * fonts.length);
     let fontName = fonts[fontIndex];
 
     try {
         await document.fonts.load(`16px "${fontName}"`);
-        mainText.style.fontFamily = `"${fontName}"`;
+        textElement.style.fontFamily = `"${fontName}"`;
     } catch (err) {
         console.warn(`Font ${fontName} failed to load`, err);
     }
 }
 
-setInterval(changeFont, 500);
+setInterval(() => {
+    changeFont(mainText)
+}, 500);
+
+changeFont(headerText);
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {
