@@ -42,6 +42,7 @@ const NUMBER_OF_STARS = 40;
 
 const mainText = document.querySelector('#main-text');
 const backgroundElement = document.querySelector('.background');
+const headerText = document.querySelector('#header-text');
 
 async function changeFont() {
     let fontIndex = Math.floor(Math.random() * fonts.length);
