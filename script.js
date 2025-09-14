@@ -1,4 +1,4 @@
-const fonts = [
+const FONTS = [
     "Absolute",
     "Ark",
     "Awesome",
@@ -38,16 +38,50 @@ const fonts = [
     "Ziplock"
 ];
 
+const SUBTITLES = [
+    "LOVEFREEFOREVER",
+    "I've done it again...",
+    "Elims is happy!",
+    "The sun smiles.",
+    "The violent miracle.",
+    "A broken man.",
+    "Momento Mori!",
+    "External validation.",
+    "Despite Everything, it's still you.",
+    "Ain't that a kick in the head!",
+    "You let me down... down...",
+    "Butcher release soon!",
+    "Now I only want you gone.",
+    "Tier 0 item.",
+    "Everything's alright.",
+    "Wrong city, wrong people.",
+    "Do you like hurting other people?",
+    "The spire sleeps, and so shall I.",
+    "KIRYUUU-CHANNN!",
+    "This is the story of a man named Stanley.",
+    "Raindrops falling on my head.",
+    "Reach out to the truth!",
+    "Break free!",
+    "x20 mult.",
+    "Rip and Tear.",
+    "The only thing they fear is you.",
+    "Thank you for remembering me.",
+    "PEOPLE'S DREAMS NEVER END!",
+    "I'm still in a dream...",
+
+]
+
 const NUMBER_OF_STARS = 40;
 
 const mainText = document.querySelector('#main-text');
 const backgroundElement = document.querySelector('.background');
 const headerText = document.querySelector('#header-text');
 const headerSubtitle = document.querySelector('#header-subtitle');
+const headerElement = document.querySelector('header');
 
 async function changeFont(textElement) {
-    let fontIndex = Math.floor(Math.random() * fonts.length);
-    let fontName = fonts[fontIndex];
+    let fontIndex = Math.floor(Math.random() * FONTS.length);
+    let fontName = FONTS[fontIndex];
 
     try {
         await document.fonts.load(`16px "${fontName}"`);
@@ -62,6 +96,22 @@ setInterval(() => {
 }, 500);
 
 changeFont(headerText);
+
+function changeSubtitleText() {
+    let subtitleIndex = Math.floor(Math.random() * SUBTITLES.length);
+    if (SUBTITLES[subtitleIndex].length > 25 && SUBTITLES[subtitleIndex].length < 30) {
+        headerSubtitle.style.right = "-75px";
+    }
+    else if (SUBTITLES[subtitleIndex].length > 30) {
+        headerSubtitle.style.right = "-80px";
+        headerSubtitle.style.bottom = "-15px";
+        headerSubtitle.style.fontSize = "12px";
+        headerElement.style.padding = "60px";
+    }
+    headerSubtitle.textContent = SUBTITLES[subtitleIndex];
+}
+
+changeSubtitleText();
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {
