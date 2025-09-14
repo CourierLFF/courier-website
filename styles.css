@@ -228,9 +228,7 @@ body {
     background: white;
     opacity: 0.9;
     transform: translateY(0);
-    animation-name: float-up;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    animation: float-up linear infinite;
 }
 
 @keyframes float-up {
@@ -242,6 +240,16 @@ body {
         transform: translateY(-140vh);
         /*opacity: 0.6;*/
     }
+}
+
+@keyframes zoom-in-out {
+    from {
+        transform: scale(1) rotate(-30deg);
+    }
+    to {
+        transform: scale(1.3) rotate(-30deg);
+    }
+
 }
 
 .main {
@@ -292,6 +300,7 @@ header,
     color: yellow;
     font-size: 14px;
     font-family: 'Nope', sans-serif;
+    animation: zoom-in-out 1.5s infinite alternate;
 }
 
 .header-container {
