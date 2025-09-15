@@ -307,6 +307,8 @@ header,
 .bottom-container {
     display: flex;
     gap: 200px;
+    width: 100%;
+    justify-content: center;
 }
 
 .left-definition,
@@ -314,6 +316,10 @@ header,
     background-color: rgba(10, 10, 10, 1);
     padding: 40px;
     border: 4px solid white;
+}
+
+.left-definition {
+    width: 700px;
 }
 
 .definition-text-container {
