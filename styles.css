@@ -307,3 +307,25 @@ header,
 .bottom-container {
 
 }
+
+.left-definition {
+    background-color: rgba(10, 10, 10, 1);
+    padding: 40px;
+    border: 4px solid white;
+}
+
+.definition-text-container {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.left-definition > p {
+    font-family: 'Loser', sans-serif;
+    font-size: 24px;
+}
+
+#definition-pronunciation {
+    font-family: 'Hungry', sans-serif;
+    font-size: 18px;
+}

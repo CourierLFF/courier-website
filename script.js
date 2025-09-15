@@ -23,7 +23,6 @@ const FONTS = [
     "Nope",
     "Outflank",
     "Passage",
-    "Quit",
     "Rude",
     "Saga",
     "Salty",
