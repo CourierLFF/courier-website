@@ -82,7 +82,22 @@ const SUBTITLES = [
 ]
 
 const DEFINITIONS = [
-
+    "The pursuit of your passions no matter the obstacles that may stand in your way.",
+    "Going through the worst event of your life and waking up the next day knowing it will all be okay.",
+    "Untying the noose.",
+    "Something greater than what our current vocabulary can articulate.",
+    "Having a nice conversation with a friend.",
+    "The sun coming up the next morning.",
+    "The ultimate euphoria.",
+    "The process of clearing the fog, never knowing if it will all go away, but still being happy with yourself.",
+    "Overcoming trauma.",
+    "The respite of silence after many long nights of screaming.",
+    "Reaching inside yourself, past all the hate, to find pockets of love.",
+    "Looking in the mirror and smiling.",
+    "The freedom to love, whoever or whatever you want, for as long as you breathe.",
+    "Being strong enough to cry.",
+    "Being strong enough to not cry.",
+    "Achieving valedictorian status and knowing you still have more to learn."
 ]
 
 const NUMBER_OF_STARS = 40;
@@ -92,6 +107,7 @@ const backgroundElement = document.querySelector('.background');
 const headerText = document.querySelector('#header-text');
 const headerSubtitle = document.querySelector('#header-subtitle');
 const headerElement = document.querySelector('header');
+const definitionExplainText = document.querySelector('.definition-explain-text');
 
 async function changeFont(textElement, fontPool) {
     let fontIndex = Math.floor(Math.random() * fontPool.length);
@@ -117,10 +133,11 @@ function changeText(textElement ,textPool) {
     if (textPool[subtitleIndex].length >= 20) {
         textElement.style.right = "-85px";
     }
-    textElement.textContent = SUBTITLES[subtitleIndex];
+    textElement.textContent = textPool[subtitleIndex];
 }
 
 changeText(headerSubtitle, SUBTITLES);
+changeText(definitionExplainText, DEFINITIONS);
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {
