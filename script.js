@@ -81,9 +81,13 @@ const SUBTITLES = [
     "I'm still in a dream...",
 ]
 
+const DEFINITIONS = [
+
+]
+
 const NUMBER_OF_STARS = 40;
 
-const mainText = document.querySelector('#main-text');
+const definitionText = document.querySelector('#definition-text');
 const backgroundElement = document.querySelector('.background');
 const headerText = document.querySelector('#header-text');
 const headerSubtitle = document.querySelector('#header-subtitle');
@@ -101,22 +105,22 @@ async function changeFont(textElement, fontPool) {
     }
 }
 
-changeFont(mainText, FONTS);
+changeFont(definitionText, FONTS);
 setInterval(() => {
-    changeFont(mainText, FONTS)
+    changeFont(definitionText, FONTS)
 }, 500);
 
 changeFont(headerText, ADJUSTED_FONTS);
 
-function changeSubtitleText() {
-    let subtitleIndex = Math.floor(Math.random() * SUBTITLES.length);
-    if (SUBTITLES[subtitleIndex].length >= 20) {
-        headerSubtitle.style.right = "-85px";
+function changeText(textElement ,textPool) {
+    let subtitleIndex = Math.floor(Math.random() * textPool.length);
+    if (textPool[subtitleIndex].length >= 20) {
+        textElement.style.right = "-85px";
     }
-    headerSubtitle.textContent = SUBTITLES[subtitleIndex];
+    textElement.textContent = SUBTITLES[subtitleIndex];
 }
 
-changeSubtitleText();
+changeText(headerSubtitle, SUBTITLES);
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {

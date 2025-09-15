@@ -262,10 +262,6 @@ body {
     align-items: center;
 }
 
-.main > h1 {
-    font-size: 72px;
-}
-
 header {
     color: white;
     margin: 30px;
@@ -306,4 +302,8 @@ header,
 
 .header-container {
     position: relative;
+}
+
+.bottom-container {
+
 }
