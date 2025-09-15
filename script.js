@@ -38,6 +38,18 @@ const FONTS = [
     "Ziplock"
 ];
 
+const ADJUSTED_FONTS = [
+    "Dust",
+    "Hungry",
+    "Kobold",
+    "Lookout",
+    "Loser",
+    "Match",
+    "Passage",
+    "Sins",
+    "Winds"
+]
+
 const SUBTITLES = [
     "LOVEFREEFOREVER",
     "I've done it again...",
@@ -80,8 +92,8 @@ const headerSubtitle = document.querySelector('#header-subtitle');
 const headerElement = document.querySelector('header');
 
 async function changeFont(textElement) {
-    let fontIndex = Math.floor(Math.random() * FONTS.length);
-    let fontName = FONTS[fontIndex];
+    let fontIndex = Math.floor(Math.random() * ADJUSTED_FONTS.length);
+    let fontName = ADJUSTED_FONTS[fontIndex];
 
     try {
         await document.fonts.load(`16px "${fontName}"`);
@@ -111,7 +123,7 @@ function changeSubtitleText() {
     headerSubtitle.textContent = SUBTITLES[subtitleIndex];
 }
 
-changeSubtitleText();
+/*changeSubtitleText();*/
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {
