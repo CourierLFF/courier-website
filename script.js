@@ -105,8 +105,8 @@ const definitionText = document.querySelector('#definition-text');
 const backgroundElement = document.querySelector('.background');
 const headerText = document.querySelector('#header-text');
 const headerSubtitle = document.querySelector('#header-subtitle');
-const headerElement = document.querySelector('header');
 const definitionExplainText = document.querySelector('.definition-explain-text');
+const rightLinks = document.querySelectorAll('.right-link');
 
 async function changeFont(textElement, fontPool) {
     let fontIndex = Math.floor(Math.random() * fontPool.length);
@@ -159,3 +159,17 @@ function renderStars() {
 }
 
 renderStars();
+
+for (let i = 0; i < rightLinks.length; i++) {
+    rightLinks[i].addEventListener('mouseenter', () => {
+        const rightLinkImg= rightLinks[i].querySelector('img');
+        rightLinkImg.src = "assets/images/filled.png";
+    });
+}
+
+for (let i = 0; i < rightLinks.length; i++) {
+    rightLinks[i].addEventListener('mouseleave', () => {
+        const rightLinkImg= rightLinks[i].querySelector('img');
+        rightLinkImg.src = "assets/images/unfilled.png";
+    });
+}
