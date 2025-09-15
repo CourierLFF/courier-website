@@ -1,43 +1,43 @@
-// const FONTS = [
-//     "Absolute",
-//     "Ark",
-//     "Awesome",
-//     "Bacteria",
-//     "Buzzer",
-//     "Compass",
-//     "Corset",
-//     "Curse",
-//     "Desert",
-//     "Dust",
-//     "Fear",
-//     "Holotype",
-//     "Hungry",
-//     "Ignore",
-//     "Kobold",
-//     "Lookout",
-//     "Loser",
-//     "Manticore",
-//     "Match",
-//     "Memo",
-//     "More",
-//     "Nope",
-//     "Outflank",
-//     "Passage",
-//     "Quit",
-//     "Rude",
-//     "Saga",
-//     "Salty",
-//     "Sins",
-//     "Tape",
-//     "Teatime",
-//     "Troll",
-//     "Vest",
-//     "Winds",
-//     "Xerxes",
-//     "Yesterday",
-//     "Ziplock"
-// ];
-//
+const FONTS = [
+    "Absolute",
+    "Ark",
+    "Awesome",
+    "Bacteria",
+    "Buzzer",
+    "Compass",
+    "Corset",
+    "Curse",
+    "Desert",
+    "Dust",
+    "Fear",
+    "Holotype",
+    "Hungry",
+    "Ignore",
+    "Kobold",
+    "Lookout",
+    "Loser",
+    "Manticore",
+    "Match",
+    "Memo",
+    "More",
+    "Nope",
+    "Outflank",
+    "Passage",
+    "Quit",
+    "Rude",
+    "Saga",
+    "Salty",
+    "Sins",
+    "Tape",
+    "Teatime",
+    "Troll",
+    "Vest",
+    "Winds",
+    "Xerxes",
+    "Yesterday",
+    "Ziplock"
+];
+
 const ADJUSTED_FONTS = [
     "Dust",
     "Hungry",
@@ -89,9 +89,9 @@ const headerText = document.querySelector('#header-text');
 const headerSubtitle = document.querySelector('#header-subtitle');
 const headerElement = document.querySelector('header');
 
-async function changeFont(textElement) {
-    let fontIndex = Math.floor(Math.random() * ADJUSTED_FONTS.length);
-    let fontName = ADJUSTED_FONTS[fontIndex];
+async function changeFont(textElement, fontPool) {
+    let fontIndex = Math.floor(Math.random() * fontPool.length);
+    let fontName = fontPool[fontIndex];
 
     try {
         await document.fonts.load(`16px "${fontName}"`);
@@ -101,11 +101,12 @@ async function changeFont(textElement) {
     }
 }
 
+changeFont(mainText, FONTS);
 setInterval(() => {
-    changeFont(mainText)
+    changeFont(mainText, FONTS)
 }, 500);
 
-changeFont(headerText);
+changeFont(headerText, ADJUSTED_FONTS);
 
 function changeSubtitleText() {
     let subtitleIndex = Math.floor(Math.random() * SUBTITLES.length);
