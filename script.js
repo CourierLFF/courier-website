@@ -1,43 +1,43 @@
-const FONTS = [
-    "Absolute",
-    "Ark",
-    "Awesome",
-    "Bacteria",
-    "Buzzer",
-    "Compass",
-    "Corset",
-    "Curse",
-    "Desert",
-    "Dust",
-    "Fear",
-    "Holotype",
-    "Hungry",
-    "Ignore",
-    "Kobold",
-    "Lookout",
-    "Loser",
-    "Manticore",
-    "Match",
-    "Memo",
-    "More",
-    "Nope",
-    "Outflank",
-    "Passage",
-    "Quit",
-    "Rude",
-    "Saga",
-    "Salty",
-    "Sins",
-    "Tape",
-    "Teatime",
-    "Troll",
-    "Vest",
-    "Winds",
-    "Xerxes",
-    "Yesterday",
-    "Ziplock"
-];
-
+// const FONTS = [
+//     "Absolute",
+//     "Ark",
+//     "Awesome",
+//     "Bacteria",
+//     "Buzzer",
+//     "Compass",
+//     "Corset",
+//     "Curse",
+//     "Desert",
+//     "Dust",
+//     "Fear",
+//     "Holotype",
+//     "Hungry",
+//     "Ignore",
+//     "Kobold",
+//     "Lookout",
+//     "Loser",
+//     "Manticore",
+//     "Match",
+//     "Memo",
+//     "More",
+//     "Nope",
+//     "Outflank",
+//     "Passage",
+//     "Quit",
+//     "Rude",
+//     "Saga",
+//     "Salty",
+//     "Sins",
+//     "Tape",
+//     "Teatime",
+//     "Troll",
+//     "Vest",
+//     "Winds",
+//     "Xerxes",
+//     "Yesterday",
+//     "Ziplock"
+// ];
+//
 const ADJUSTED_FONTS = [
     "Dust",
     "Hungry",
@@ -70,7 +70,6 @@ const SUBTITLES = [
     "Do you like hurting other people?",
     "The spire sleeps, and so shall I.",
     "KIRYUUU-CHANNN!",
-    "This is the story of a man named Stanley.",
     "Raindrops falling on my head.",
     "Reach out to the truth!",
     "Break free!",
@@ -80,7 +79,6 @@ const SUBTITLES = [
     "Thank you for remembering me.",
     "PEOPLE'S DREAMS NEVER END!",
     "I'm still in a dream...",
-
 ]
 
 const NUMBER_OF_STARS = 40;
@@ -111,19 +109,13 @@ changeFont(headerText);
 
 function changeSubtitleText() {
     let subtitleIndex = Math.floor(Math.random() * SUBTITLES.length);
-    if (SUBTITLES[subtitleIndex].length > 25 && SUBTITLES[subtitleIndex].length < 30) {
-        headerSubtitle.style.right = "-75px";
-    }
-    else if (SUBTITLES[subtitleIndex].length > 30) {
-        headerSubtitle.style.right = "-80px";
-        headerSubtitle.style.bottom = "-15px";
-        headerSubtitle.style.fontSize = "12px";
-        headerElement.style.padding = "60px";
+    if (SUBTITLES[subtitleIndex].length >= 20) {
+        headerSubtitle.style.right = "-85px";
     }
     headerSubtitle.textContent = SUBTITLES[subtitleIndex];
 }
 
-/*changeSubtitleText();*/
+changeSubtitleText();
 
 function renderStars() {
     for (let i = 0; i < NUMBER_OF_STARS; i++) {
