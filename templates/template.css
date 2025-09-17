@@ -90,3 +90,18 @@ header {
 .header-container {
     position: relative;
 }
+
+.main {
+    height: 100%;
+    z-index: 2;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.main {
+    width: 70%;
+}
