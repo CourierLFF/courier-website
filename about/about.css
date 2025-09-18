@@ -32,6 +32,11 @@ li > a,
     text-decoration: none;
 }
 
+li > a:hover,
+#github-link:hover {
+    text-decoration: underline;
+}
+
 li {
     padding-top: 5px;
 }
