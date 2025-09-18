@@ -51,13 +51,15 @@ body {
 }
 
 header {
+    width: 70%;
     color: white;
     margin: 30px;
     z-index: 2;
     background-color: rgba(10, 10, 10, 1);
     padding: 40px;
     border: 4px solid white;
-    height: 130px;
+    height: 110px;
+    min-height: 110px;
     /*position: relative;*/
     display: flex;
     justify-content: center;
@@ -70,10 +72,6 @@ header {
     font-size: 72px;
     position: relative;
     font-family: "Hungry", sans-serif;
-}
-
-header {
-    width: 70%;
 }
 
 #header-subtitle {
