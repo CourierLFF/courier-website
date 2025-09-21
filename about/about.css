@@ -1,11 +1,11 @@
 .main {
     background-color: rgba(10, 10, 10, 1);
-    padding: 40px;
+    padding: 10px 40px;
     border: 4px solid white;
     font-family: "Loser";
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
 }
 
 .top-text {
@@ -62,4 +62,22 @@ li {
 
 .bottom-image > img {
     border: 4px solid white;
+}
+
+
+
+#artemis-pic {
+    width: 500px;
+    height: auto;
+}
+
+@media screen and (max-width: 1920px) {
+    #artemis-pic {
+        width: 300px;
+        height: auto;
+    }
+
+    .top-text {
+        font-size: 22px;
+    }
 }
