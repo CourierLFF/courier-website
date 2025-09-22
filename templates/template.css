@@ -73,6 +73,11 @@ header {
     font-family: "Hungry", sans-serif;
 }
 
+#header-text > a {
+    color: white;
+    text-decoration: none;
+}
+
 #header-subtitle {
     position: absolute;
     bottom: -10px;
