@@ -74,11 +74,14 @@ for (let i = 0; i < rightLinks.length; i++) {
         const rightLinkImg= rightLinks[i].querySelector('img');
         rightLinkImg.src = "assets/images/filled.png";
     });
-}
 
-for (let i = 0; i < rightLinks.length; i++) {
     rightLinks[i].addEventListener('mouseleave', () => {
         const rightLinkImg= rightLinks[i].querySelector('img');
         rightLinkImg.src = "assets/images/unfilled.png";
     });
+
+    const rickRoll = Math.floor(Math.random() * 500) + 1;
+    if (rickRoll === 59) {
+        rightLinks[i].href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
 }
