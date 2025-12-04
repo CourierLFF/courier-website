@@ -69,6 +69,18 @@ async function loadCategoryData(categoryDataPath) {
         articleDescription.classList.add('blog-entry-description');
         article.appendChild(articleDescription);
 
+        article.addEventListener('mouseenter', () => {
+            articleTitle.style.textDecoration = "underline";
+        });
+        
+        article.addEventListener('mouseleave', () => {
+            articleTitle.style.textDecoration = "none";
+        });        
+
+        article.addEventListener('click', () => {
+            window.location.href = categoryData.articles[i].path;
+        });
+
         blogView.appendChild(article);
     }
 }
