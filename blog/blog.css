@@ -24,6 +24,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 150px;
+    margin-bottom: 50px;
 }
 
 .blog-category {
@@ -40,6 +41,6 @@
 
 .blog-category > p {
     text-align: center;
-    font-size: 28px;
+    font-size: 32px;
     margin: 0;
 }
