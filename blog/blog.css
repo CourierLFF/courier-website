@@ -4,7 +4,7 @@
     border: 4px solid white;
     font-family: "Loser";
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .main > h2 {
@@ -17,6 +17,10 @@
     font-size: 32px;
     color: gray;
     opacity: 0.7;
+}
+
+#blog-header {
+    margin-bottom: 0px;
 }
 
 .blog-categories {
@@ -43,4 +47,33 @@
     text-align: center;
     font-size: 32px;
     margin: 0;
+}
+
+#blog-home-button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    font-size: 36px;
+}
+
+.blog-entry-title,
+.blog-entry-date-written,
+.blog-entry-description {
+    margin: 0;
+}
+
+.blog-entry-title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.blog-entry-date-written {
+    font-size: 24px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+.blog-entry-description {
+    font-size: 24px;
 }

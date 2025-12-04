@@ -3,8 +3,76 @@ let categories = document.querySelectorAll('.blog-category');
 const blogHeader = document.querySelector('#blog-header');
 
 function loadCategory(categoryName) {
-    console.log("Loading category: " + categoryName);
+    switch (categoryName) {
+        case "General Articles":
+            blogHeader.innerText = "General Articles";
+            blogView.innerHTML = '';
+            loadCategoryData('categoryData/general.json');
+            break;
+        case "CTF Write-Ups":
+            blogHeader.innerText = "CTF Write-Ups";
+            blogView.innerHTML = '';
+            loadCategoryData('categoryData/writeups.json');
+            break;
+        case "Miscellaneous Ramblings":
+            blogHeader.innerText = "Miscellaneous Ramblings";
+            blogView.innerHTML = '';
+            loadCategoryData('categoryData/misc.json');
+            break;
+        case "???":
+            blogHeader.innerText = "???";
+            blogView.innerHTML = '';
+            loadCategoryData('categoryData/mystery.json');
+            break; 
+        default:
+            break;
+    }
 }
+
+async function loadCategoryData(categoryDataPath) {
+    const categoryData = await fetch(categoryDataPath).then(response => response.json());
+    
+    const homeButton = document.createElement('p');
+    homeButton.id = "blog-home-button";
+    homeButton.innerText = "<- Back to Categories";
+
+    homeButton.addEventListener('mouseenter', () => {
+        homeButton.style.textDecoration = "underline";
+    });
+    
+    homeButton.addEventListener('mouseleave', () => {
+        homeButton.style.textDecoration = "none";
+    });
+    
+    homeButton.addEventListener('click', () => {
+        unloadCategory();
+    });
+    
+    blogView.appendChild(homeButton);
+
+    for (let i = 0; i < categoryData.articles.length; i++) {
+        const article = document.createElement('div');
+        article.classList.add('blog-entry');
+
+        const articleTitle = document.createElement('p');
+        articleTitle.innerHTML = `${categoryData.articles[i].title}`
+        articleTitle.classList.add('blog-entry-title');
+        article.appendChild(articleTitle);
+
+        const articleDate = document.createElement('p');
+        articleDate.innerHTML = `${categoryData.articles[i]['date-written']}`
+        articleDate.classList.add('blog-entry-date-written');
+        article.appendChild(articleDate);
+
+        const articleDescription = document.createElement('p');
+        articleDescription.innerHTML = `${categoryData.articles[i].description}`
+        articleDescription.classList.add('blog-entry-description');
+        article.appendChild(articleDescription);
+
+        blogView.appendChild(article);
+    }
+}
+
 
 function unloadCategory() {
     blogHeader.innerText = "Blog";
