@@ -50,4 +50,10 @@
 td {
     display: flex;
     align-items: center;
+    font-size: 28px;
+    gap: 10px;
+}
+
+th {
+    font-size: 48px;
 }
