@@ -5,4 +5,49 @@
     font-family: "Loser";
     flex-direction: column;
     justify-content: flex-start;
+    height: auto;
+}
+
+.cover-art {
+    width: 50px;
+    height: auto;
+}
+
+.game-link {
+    color: white;
+    text-decoration: none;
+}
+
+.game-link:hover {
+    text-decoration: underline;
+}
+
+.gameshelf-container {
+    width: 100%;
+}
+
+#gameshelf-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#gameshelf-table tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#gameshelf-table td:first-child {
+    flex-grow: 1;
+}
+
+#gameshelf-table td:last-child {
+    text-align: right;
+    margin-left: auto;
+}
+
+td {
+    display: flex;
+    align-items: center;
 }
