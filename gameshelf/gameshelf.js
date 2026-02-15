@@ -8,8 +8,6 @@ async function getGameShelfData() {
 
 let gameShelfData = await getGameShelfData()
 
-console.log(gameShelfData)
-
 const gameshelfTable = document.getElementById('gameshelf-table');
 gameShelfData.forEach(game => {
     const row = document.createElement('tr');
