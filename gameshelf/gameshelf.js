@@ -7,3 +7,14 @@ async function getGameShelfData() {
 }
 
 let gameShelfData = await getGameShelfData()
+
+console.log(gameShelfData)
+
+const gameshelfTable = document.getElementById('gameshelf-table');
+gameShelfData.forEach(game => {
+    const row = gameshelfTable.insertRow();
+    const nameCell = row.insertCell(0);
+    const ratingCell = row.insertCell(1);
+    nameCell.innerHTML = `<a href="${game.igdb_url}">${game.name}</a>`;
+    ratingCell.textContent = game.user_rating;
+});

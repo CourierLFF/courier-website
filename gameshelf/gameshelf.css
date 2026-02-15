@@ -1,0 +1,8 @@
+.main {
+    background-color: rgba(10, 10, 10, 1);
+    padding: 10px 40px;
+    border: 4px solid white;
+    font-family: "Loser";
+    flex-direction: column;
+    justify-content: flex-start;
+}
