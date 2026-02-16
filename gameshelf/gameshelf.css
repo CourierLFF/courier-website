@@ -1,6 +1,6 @@
 .main {
     background-color: rgba(10, 10, 10, 1);
-    padding: 10px 40px;
+    padding: 20px 40px 60px 40px;
     border: 4px solid white;
     font-family: "Loser";
     flex-direction: column;
