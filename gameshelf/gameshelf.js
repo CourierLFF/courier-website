@@ -6,7 +6,36 @@ async function getGameShelfData() {
     return await response.json();
 }
 
+
 let gameShelfData = await getGameShelfData()
+
+const default_state = 'Playing';
+let currentState = default_state;
+
+function disableOtherButtons() {
+    document.querySelectorAll('.tracked-state-buttons button').forEach(button => {
+        if (button.textContent == currentState) {
+            button.disabled = true;
+            button.classList.add('tracked-state-button-active');
+        } else {
+            button.disabled = false;
+            button.classList.remove('tracked-state-button-active');
+        }
+    });
+}
+
+let gameShelfDataPlaying = gameShelfData.filter(game => game.game_state === 'Playing');
+let gameShelfDataBacklog = gameShelfData.filter(game => game.game_state === 'Backlog');
+let gameShelfDataCompleted = gameShelfData.filter(game => game.game_state === 'Completed');
+let gameShelfDataDropped = gameShelfData.filter(game => game.game_state === 'Dropped');
+
+for (const button of document.querySelectorAll('.tracked-state-buttons button')) {
+    button.addEventListener('click', () => {
+        currentState = button.textContent;
+        disableOtherButtons();
+    });
+}
+        
 
 const gameshelfTable = document.getElementById('gameshelf-table');
 gameShelfData.forEach(game => {
