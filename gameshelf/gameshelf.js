@@ -12,6 +12,9 @@ let gameShelfData = await getGameShelfData()
 const default_state = 'Playing';
 let currentState = default_state;
 
+const default_sort = 'rating';
+let currentSort = default_sort;
+
 function disableOtherButtons() {
     document.querySelectorAll('.tracked-state-buttons button').forEach(button => {
         if (button.textContent == currentState) {
@@ -24,9 +27,9 @@ function disableOtherButtons() {
     });
 }
 
-let gameShelfDataPlaying = gameShelfData.filter(game => game.game_state === 'Playing');
-let gameShelfDataCompleted = gameShelfData.filter(game => game.game_state === 'Completed');
-let gameShelfDataDropped = gameShelfData.filter(game => game.game_state === 'Dropped');
+let gameShelfDataPlaying = gameShelfData.filter(game => game.game_state === 'Playing').sort((a, b) => b.user_rating - a.user_rating);
+let gameShelfDataCompleted = gameShelfData.filter(game => game.game_state === 'Completed').sort((a, b) => b.user_rating - a.user_rating);
+let gameShelfDataDropped = gameShelfData.filter(game => game.game_state === 'Dropped').sort((a, b) => b.user_rating - a.user_rating);
 
 for (const button of document.querySelectorAll('.tracked-state-buttons button')) {
     button.addEventListener('click', () => {
@@ -35,6 +38,37 @@ for (const button of document.querySelectorAll('.tracked-state-buttons button'))
         updateGameShelfTable();
     });
 }
+
+const sortSelect = document.getElementById('sort-select');
+sortSelect.addEventListener('change', () => {
+    currentSort = sortSelect.value;
+
+    switch (currentSort) {
+        case 'name':
+            gameShelfDataPlaying.sort((a, b) => a.name.localeCompare(b.name));
+            gameShelfDataCompleted.sort((a, b) => a.name.localeCompare(b.name));
+            gameShelfDataDropped.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'name-reverse':
+            gameShelfDataPlaying.sort((a, b) => b.name.localeCompare(a.name));
+            gameShelfDataCompleted.sort((a, b) => b.name.localeCompare(a.name));
+            gameShelfDataDropped.sort((a, b) => b.name.localeCompare(a.name));
+            break;
+        case 'rating':
+            gameShelfDataPlaying.sort((a, b) => b.user_rating - a.user_rating);
+            gameShelfDataCompleted.sort((a, b) => b.user_rating - a.user_rating);
+            gameShelfDataDropped.sort((a, b) => b.user_rating - a.user_rating);
+            break;
+        case 'rating-reverse':
+            gameShelfDataPlaying.sort((a, b) => a.user_rating - b.user_rating);
+            gameShelfDataCompleted.sort((a, b) => a.user_rating - b.user_rating);
+            gameShelfDataDropped.sort((a, b) => a.user_rating - b.user_rating);
+            break;
+    }
+    
+    updateGameShelfTable();
+});
+
         
 
 const gameshelfTable = document.getElementById('gameshelf-table');

@@ -25,6 +25,15 @@
             <button id="completed-button">Completed</button>
             <button id="dropped-button">Dropped</button>
         </div>
+        <div class="sort">
+            <label for="sort">Sort by:</label>
+            <select id="sort-select">
+                <option value="name">Name (A-Z)</option>
+                <option value="name-reverse">Name (Z-A)</option>
+                <option value="rating" selected>Rating (High to Low)</option>
+                <option value="rating-reverse">Rating (Low to High)</option>
+            </select>
+        </div>
         <div class="gameshelf-container">
             <table id="gameshelf-table">
                 <tr>
