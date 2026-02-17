@@ -65,7 +65,7 @@ sortSelect.addEventListener('change', () => {
             gameShelfDataDropped.sort((a, b) => a.user_rating - b.user_rating);
             break;
     }
-    
+
     updateGameShelfTable();
 });
 
@@ -83,7 +83,7 @@ function updateGameShelfTable() {
                 const rating = document.createElement('td');
                 
                 name.innerHTML = `<img class="cover-art" src="${game.cover_art}" alt="${game.name}"><a class="game-link" href="${game.igdb_url}">${game.name}</a>`;
-                rating.textContent = game.user_rating;
+                rating.textContent = `${game.user_rating} / 100`;
 
                 row.appendChild(name);
                 row.appendChild(rating);
@@ -98,7 +98,7 @@ function updateGameShelfTable() {
                 const rating = document.createElement('td');
                 
                 name.innerHTML = `<img class="cover-art" src="${game.cover_art}" alt="${game.name}"><a class="game-link" href="${game.igdb_url}">${game.name}</a>`;
-                rating.textContent = game.user_rating;
+                rating.textContent = `${game.user_rating} / 100`;
 
                 row.appendChild(name);
                 row.appendChild(rating);
@@ -113,7 +113,7 @@ function updateGameShelfTable() {
                 const rating = document.createElement('td');
                 
                 name.innerHTML = `<img class="cover-art" src="${game.cover_art}" alt="${game.name}"><a class="game-link" href="${game.igdb_url}">${game.name}</a>`;
-                rating.textContent = game.user_rating;
+                rating.textContent = `${game.user_rating} / 100`;
 
                 row.appendChild(name);
                 row.appendChild(rating);
@@ -125,3 +125,4 @@ function updateGameShelfTable() {
 }
 
 updateGameShelfTable();
+disableOtherButtons();
