@@ -40,6 +40,7 @@ for (const button of document.querySelectorAll('.tracked-state-buttons button'))
 }
 
 const sortSelect = document.getElementById('sort-select');
+const searchInput = document.getElementById('search-input');
 sortSelect.addEventListener('change', () => {
     currentSort = sortSelect.value;
 
@@ -66,11 +67,14 @@ sortSelect.addEventListener('change', () => {
             break;
     }
 
-    updateGameShelfTable();
+    if (searchInput.value !== '') {
+        searchGames();
+    } else {
+        updateGameShelfTable();
+    }
 });
 
-const searchInput = document.getElementById('search-input');
-searchInput.addEventListener('input', () => {
+function searchGames() {
     const searchTerm = searchInput.value.toLowerCase();
     const filteredPlaying = gameShelfDataPlaying.filter(game => game.name.toLowerCase().includes(searchTerm));
     const filteredCompleted = gameShelfDataCompleted.filter(game => game.name.toLowerCase().includes(searchTerm));
@@ -86,8 +90,10 @@ searchInput.addEventListener('input', () => {
         case 'Dropped':
             updateGameShelfTable(filteredDropped);
             break;
-    }
-});
+    }    
+}
+
+searchInput.addEventListener('input', searchGames);
 
         
 
