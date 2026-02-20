@@ -69,15 +69,35 @@ sortSelect.addEventListener('change', () => {
     updateGameShelfTable();
 });
 
+const searchInput = document.getElementById('search-input');
+searchInput.addEventListener('input', () => {
+    const searchTerm = searchInput.value.toLowerCase();
+    const filteredPlaying = gameShelfDataPlaying.filter(game => game.name.toLowerCase().includes(searchTerm));
+    const filteredCompleted = gameShelfDataCompleted.filter(game => game.name.toLowerCase().includes(searchTerm));
+    const filteredDropped = gameShelfDataDropped.filter(game => game.name.toLowerCase().includes(searchTerm));
+
+    switch (currentState) {
+        case 'Playing':
+            updateGameShelfTable(filteredPlaying);
+            break;
+        case 'Completed':
+            updateGameShelfTable(filteredCompleted);
+            break;
+        case 'Dropped':
+            updateGameShelfTable(filteredDropped);
+            break;
+    }
+});
+
         
 
 const gameshelfTable = document.getElementById('gameshelf-table');
 
-function updateGameShelfTable() {
+function updateGameShelfTable(filteredGames = null) {
     gameshelfTable.innerHTML = '<tr><th>Game</th><th>Rating</th></tr>';
     switch (currentState) {
         case 'Playing':
-            gameShelfDataPlaying.forEach(game => {
+            (filteredGames || gameShelfDataPlaying).forEach(game => {
                 const row = document.createElement('tr');
                 const name = document.createElement('td');
                 const rating = document.createElement('td');
@@ -92,7 +112,7 @@ function updateGameShelfTable() {
             });
             break;
         case 'Completed':
-            gameShelfDataCompleted.forEach(game => {
+            (filteredGames || gameShelfDataCompleted).forEach(game => {
                 const row = document.createElement('tr');
                 const name = document.createElement('td');
                 const rating = document.createElement('td');
@@ -107,7 +127,7 @@ function updateGameShelfTable() {
             });
             break;
         case 'Dropped':
-            gameShelfDataDropped.forEach(game => {
+            (filteredGames || gameShelfDataDropped).forEach(game => {
                 const row = document.createElement('tr');
                 const name = document.createElement('td');
                 const rating = document.createElement('td');

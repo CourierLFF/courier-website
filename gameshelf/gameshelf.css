@@ -107,3 +107,17 @@ th {
 .sort > label {
     font-size: 24px;
 }
+
+.search {
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+#search-input {
+    padding: 10px;
+    font-size: 24px;
+    font-family: "Loser";
+    background-color: rgba(10, 10, 10, 1);
+    border: 2px solid white;
+    color: white;
+}
